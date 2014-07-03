@@ -25,4 +25,10 @@ class SessionsController < ApplicationController
   	redirect_to login_path
   end
 
+  def clear
+    session[:user_id] = nil
+    flash[:notice] = "you have been logged out."
+    redirect_to login_path
+  end
+
 end
