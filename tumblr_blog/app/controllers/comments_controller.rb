@@ -6,6 +6,8 @@ class CommentsController < ApplicationController
   end
 
   def show
+  	@post = Post.find(params[:id])
+    @new_comment = Comment.new
   end
 
   def destroy
