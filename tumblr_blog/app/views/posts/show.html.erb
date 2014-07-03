@@ -1,7 +1,6 @@
 <p><%= @post.body %></p>
 
 
-
 <!-- comments form -->
 <p> create new comment:</p>
 <%= form_for(@new_comment) do |f| %>
@@ -11,3 +10,13 @@
 <% end %> 
 
 <!-- list of comments -->
+<p> Comments </p>
+<ul>
+	<% @post.comments.each do |comment| %>
+		<li><%= comment.body %> 
+
+		<% if current_user == @user %>
+		(<%= link_to "DELETE", comment_path(comment), method: "delete" %>)</li>
+		<% end %>
+	<% end %>
+</ul>
