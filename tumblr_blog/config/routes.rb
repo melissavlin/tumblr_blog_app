@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
   resources :users
+  resources :posts
 
   get 'login' => 'sessions#new'
   post 'sessions' => 'sessions#create'

@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+    @new_post = Post.new
   end
 
   def new
@@ -14,7 +16,6 @@ class UsersController < ApplicationController
     else
       @user = User.new
     end
-
   end
 
   def create
@@ -44,6 +45,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    
   end
 
   private
