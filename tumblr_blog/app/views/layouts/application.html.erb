@@ -8,7 +8,21 @@
 </head>
 <body>
 
-<%= yield %>
+
+		<% if current_user %>
+
+			<p> <%= "Welcome #{current_user.username}" %> | <%= link_to "Users List", users_path %> | <%= link_to "Logout", logout_path, method: "delete" %></p>
+
+		<% else %> 
+
+			<p><%= link_to "Sign in", login_path %> | <%= link_to "sign up", root_path %> </p>
+		<% end %>
+
+		<%= flash[:notice] if flash[:notice] %>
+		<%= flash[:alert] if flash[:alert] %>
+
+			<%= yield %>
+
 
 </body>
 </html>

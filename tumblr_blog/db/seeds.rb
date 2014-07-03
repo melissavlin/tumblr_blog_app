@@ -3,5 +3,13 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+  # cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+  # Mayor.create(name: 'Emanuel', city: cities.first)
+
+user1 = User.create(username: "Tom", password: "password", bio: "the cool character from that famous book")
+
+user2 = User.create(username: "Melissa", password: "password", bio: "the supporting sidekick")
+
+user3 = User.create(username: "Brian", password: "1234", bio: "instructor and fun-maker")
+
+# user1.posts = Post.create ([{body: ""}, {body: ""}])
