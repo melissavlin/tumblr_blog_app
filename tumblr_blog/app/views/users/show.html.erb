@@ -10,8 +10,8 @@
 
 
 <% if current_user == @user %>
-<h1>New Comment</h1>
-<%= form_for(@new_comment) do |f| %>
+<h1>New Post</h1>
+<%= form_for(@new_post) do |f| %>
 	<%= f.label :body %><br />
 	<%= f.text_area :body %><br />
 	<%= f.submit :post %>
@@ -23,8 +23,10 @@
 	<% @user.posts.each do |post| %>
 		<li><%= post.body %> 
 
-		<% if current_user == @user %>
 		(<%= link_to "COMMENTS", post_path(post)%>)
+		
+		<% if current_user == @user %>
+
 		(<%= link_to "DELETE", post_path(post), method: "delete" %>)</li>
 		<% end %>
 	<% end %>
