@@ -11,7 +11,7 @@
 
 		<% if current_user %>
 
-			<p> <%= "Welcome #{current_user.username}" %> | <%= link_to "Users List", users_path %> | <%= link_to "Logout", logout_path, method: "delete" %></p>
+			<p> <%= "Welcome #{current_user.username}" %> | <%= link_to "Your Profile", user_path(current_user) %> | <%= link_to "Users List", users_path %> |  <%= link_to "Logout", logout_path, method: "delete" %></p>
 
 		<% else %> 
 
