@@ -4,17 +4,19 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+    @new_post = Post.new
   end
 
   def new
     @user = User.new
-
   end
 
   def create
     @user = User.create(user_params)
     if @user
       flash[:notice] = "New User Created!"
+      session[:user_id] = @user.id
       redirect_to users_path
     else
       flash[:alert] = "There was a problem."
@@ -30,6 +32,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    
   end
 
 end
